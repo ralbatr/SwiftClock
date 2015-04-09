@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             alert.message = notification.alertBody
             alert.addButtonWithTitle("确定")
             alert.show()
+            
+//            var dic = Dictionary()
+//            dic = notification.userInfo
+            // 图标数字减一
+            application.applicationIconBadgeNumber--;
         }
     }
 

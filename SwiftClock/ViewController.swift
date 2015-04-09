@@ -159,7 +159,7 @@ class ViewController: UIViewController {
         clearButton!.enabled = enabled
         clearButton!.alpha = enabled ? 1.0 :0.3
     }
-    
+// 添加通知
     func createAndFireLoclNotificationAfterSeconds(seconds:Int) {
         
         UIApplication.sharedApplication().cancelAllLocalNotifications()
@@ -173,6 +173,8 @@ class ViewController: UIViewController {
         notificaiton.alertBody = "计时完成"
         
         UIApplication.sharedApplication().scheduleLocalNotification(notificaiton)
+        // 图标数字加1
+        UIApplication.sharedApplication().applicationIconBadgeNumber++
     }
     
 }
