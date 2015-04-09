@@ -81,9 +81,7 @@ class ViewController: UIViewController {
     }
     
     func setupTimeButtons(){
-//        var buttons:[UIButton] = []
         var buttons:[UIButton] = [UIButton]()
-//        var buttons:Array = Array<UIButton>()
         for(index,(title,_)) in enumerate(timeButtonInfos){
             
             let button:UIButton = UIButton()
@@ -146,6 +144,8 @@ class ViewController: UIViewController {
             alert.message = ""
             alert.addButtonWithTitle("OK")
             alert.show()
+            // 图标数字加1
+            UIApplication.sharedApplication().applicationIconBadgeNumber++
         }else{
             remainingSeconds--
         }
@@ -173,8 +173,6 @@ class ViewController: UIViewController {
         notificaiton.alertBody = "计时完成"
         
         UIApplication.sharedApplication().scheduleLocalNotification(notificaiton)
-        // 图标数字加1
-        UIApplication.sharedApplication().applicationIconBadgeNumber++
     }
     
 }

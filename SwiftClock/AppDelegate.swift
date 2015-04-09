@@ -15,10 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         let version = UIDevice.currentDevice().systemVersion
 
         if (version as NSString).doubleValue >= 8.0 { // 只在IOS8 上起作用
             application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
+            // 图标数字减一
+            application.applicationIconBadgeNumber--;
         }
 
         return true
