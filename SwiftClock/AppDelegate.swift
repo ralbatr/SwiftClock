@@ -23,6 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        let version = UIDevice.currentDevice().systemVersion
+        
+        if (version as NSString).doubleValue < 8.0 { // 添加对小于IOS8低版本通知支持
+            var alert = UIAlertView()
+            alert.title = "定时提醒"
+            alert.message = notification.alertBody
+            alert.addButtonWithTitle("确定")
+            alert.show()
+        }
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
